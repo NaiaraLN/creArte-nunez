@@ -4,7 +4,7 @@ import { CartWidget } from "../CartWidget"
 
 const Navbar = () => {
     return(
-        <HStack as='nav' bg='rgba(0,0,0,0.95)' backdropFilter='blur(10px)' border='1px' borderColor='rgba(0,0,0, 0.18)' pos='sticky'>
+        <HStack as='nav' bg='black' pos='sticky'>
             <img src={logo} alt="Logo de CreArte" width="200px" />
             <Spacer />
             <HStack>
