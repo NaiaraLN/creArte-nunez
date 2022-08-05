@@ -1,13 +1,13 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import {Navbar} from './Navbar'
-import {ItemListContainer} from './ItemListContainer'
+import {Main} from './Main'
 
 
 function App() {
     return (
         <ChakraProvider>
             <Navbar />
-            <ItemListContainer greeting='Bienvenidos a la plataforma para artistas y fanáticos del arte!'/>
+            <Main />
         </ChakraProvider>
     )
 }
