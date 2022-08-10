@@ -1,8 +1,8 @@
 
-export const customFetch = (data) => {
+export const customFetch = (products) => {
     return new Promise((res, rej) => {
         setTimeout(() => {
-            res(data)
+            res(products)
         }, 2000)
     })
 }
