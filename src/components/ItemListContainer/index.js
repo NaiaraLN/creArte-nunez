@@ -1,7 +1,7 @@
 import { Heading, Spinner, Flex } from '@chakra-ui/react'
-import { customFetch } from "../../assets/customFetch";
+import { customFetch } from "../../utils/customFetch";
 import { useState, useEffect } from 'react';
-import { products } from '../../assets/products'
+import { products } from '../../utils/products'
 import { ItemList } from '../ItemList';
 
 

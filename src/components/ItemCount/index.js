@@ -8,6 +8,7 @@ const ItemCount = ({ initial, stock, onAdd}) => {
   const increase = () => count < stock && setCount(count + 1)
   const decrease = () => count > initial && setCount(count - 1)
 
+  
   return (
     <VStack>
       <HStack spacing={8}>
