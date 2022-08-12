@@ -19,8 +19,8 @@ const ItemListContainer = ({greeting}) => {
     }, [])
 
     return(
-        <Flex align='center' direction='column' bgGradient='linear(to-b, #680148, #000000)'>
-            <Heading as='h1' size='xl' color='white'>{greeting}</Heading>
+        <Flex align='center' direction='column'>
+            <Heading as='h1' size='xl' color='white' lineHeight='md'>{greeting}</Heading>
             {loading? <ItemList listProducts={listProducts} /> : <Spinner/>}
         </ Flex>
     )

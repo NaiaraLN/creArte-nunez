@@ -12,11 +12,11 @@ const ItemCount = ({ initial, stock, onAdd}) => {
   return (
     <VStack>
       <HStack spacing={8}>
-        <Button colorScheme='cyan' variant='outline' onClick={decrease}>-</Button>
+        <Button  variant='third' onClick={decrease}>-</Button>
         <Text>{count}</Text>
-        <Button colorScheme='cyan' variant='outline' onClick={increase}>+</Button>
+        <Button  variant='third' onClick={increase}>+</Button>
       </HStack>
-      <Button colorScheme='cyan' variant='solid'>Agregar al carrito</Button>
+      <Button variant='third'>Agregar al carrito</Button>
     </VStack>
     
     
