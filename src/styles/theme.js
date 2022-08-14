@@ -4,7 +4,7 @@ import "@fontsource/heebo"
 
 const CustomTheme = extendTheme({
     colors: {
-        primary: "rgba(224,239,241,0.6)",
+        primary: "rgba(224,239,241,0.55)",
         secondary: "#680148",
         third: "#7DB4B5"
     },

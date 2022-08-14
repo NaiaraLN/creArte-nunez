@@ -3,15 +3,18 @@ import {Navbar} from './Navbar'
 import {Main} from './Main'
 import {Footer} from './Footer'
 import {CustomTheme} from '../styles/theme'
+import {BrowserRouter} from 'react-router-dom'
 
 
 
 function App() {
     return (
         <ChakraProvider theme={CustomTheme}>
-            <Navbar />
-            <Main />
-            <Footer/>
+            <BrowserRouter>
+                <Navbar />
+                <Main />
+                <Footer/>
+            </BrowserRouter>
         </ChakraProvider>
     )
 }
