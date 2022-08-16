@@ -1,9 +1,18 @@
-import { VStack, Text, Heading, Image, Box, ScaleFade, Stack} from "@chakra-ui/react"
+import { VStack, Text, Heading, Image, Box, ScaleFade, Stack, Button} from "@chakra-ui/react"
+import { useState } from "react"
+import { NavLink } from "react-router-dom"
 import { ItemCount } from "../ItemCount"
 
 const ItemDetail = ({listProduct}) => {
 
   const isOpen = true
+
+  const [isAdded, setIsAdded] = useState()
+  const onAdd = (count) =>{
+    setIsAdded(true)
+    listProduct.quantity = count
+  }
+
 
   return (
     <ScaleFade initialScale={0.8} in={isOpen}>
@@ -29,7 +38,12 @@ const ItemDetail = ({listProduct}) => {
                 <Text align='center'>Descripción: {listProduct.description}</Text>
                 <Text >Técnica: {listProduct.technique}</Text>
                 <Text >Tamaño: {listProduct.size}</Text>
-                <ItemCount initial={listProduct.initial} stock={listProduct.stock} onAdd={() => {}}/>
+                {isAdded? 
+                <NavLink to='/cart'>
+                  <Button variant='third'>Ir al carrito</Button>
+                </NavLink> :
+                <ItemCount initial={listProduct.initial} stock={listProduct.stock} onAdd={onAdd}/>}
+                
             </VStack>
         </Stack>
             

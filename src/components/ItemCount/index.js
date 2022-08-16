@@ -7,7 +7,9 @@ const ItemCount = ({ initial, stock, onAdd}) => {
   
   const increase = () => count < stock && setCount(count + 1)
   const decrease = () => count > initial && setCount(count - 1)
-
+  const confirm = () => {
+    onAdd(count)
+  }
   
   return (
     <VStack>
@@ -16,7 +18,7 @@ const ItemCount = ({ initial, stock, onAdd}) => {
         <Text>{count}</Text>
         <Button  variant='third' onClick={increase}>+</Button>
       </HStack>
-      <Button variant='third'>Agregar al carrito</Button>
+      <Button variant='third' onClick={confirm}>Agregar al carrito</Button>
     </VStack>
     
     
