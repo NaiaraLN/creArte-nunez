@@ -6,6 +6,7 @@ import background from '../../assets/bg.jpeg'
 import { Routes, Route } from "react-router-dom";
 
 const Main = () => {
+
     return (
         <Box as='main' minH='90vh' bgImage={background} bgSize='cover'>
             <Routes>

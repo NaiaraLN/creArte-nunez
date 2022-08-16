@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
   
   return (
     <Box as='section' display='flex' justifyContent='center' alignItems='center' minH='90vh'>
-      {loading? <ItemDetail listProduct={listProduct}/> : <Spinner color='white' size='xl'/>}
+      {loading? <ItemDetail listProduct={listProduct}/> : <Spinner color='white' thickness="5px" size='xl'/>}
     </Box>
   )
 }

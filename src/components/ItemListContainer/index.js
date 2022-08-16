@@ -1,4 +1,4 @@
-import { Heading, Spinner, Flex} from '@chakra-ui/react'
+import { Heading, Spinner, Box} from '@chakra-ui/react'
 import { customFetch } from "../../utils/customFetch";
 import { useState, useEffect } from 'react';
 import { products } from '../../utils/products'
@@ -9,6 +9,7 @@ const ItemListContainer = ({greeting}) => {
 
     const [listProducts, setListProducts] = useState([])
     const [loading, setLoading] = useState(false)
+    
     const {category} = useParams()
 
 
@@ -27,11 +28,12 @@ const ItemListContainer = ({greeting}) => {
     }, [category])
 
     return(
-        <Flex align='center' direction='column'>
+        <Box as='section' minH='90vh' display='flex' alignItems='center' flexDir='column'>
             <Heading as='h1' size='xl' color='white' lineHeight='md'>{greeting}</Heading>
-            {loading? <ItemList listProducts={listProducts} /> : <Spinner color='white' size='xl'/>}
-            
-        </ Flex>
+            <Box display='flex' alignItems='center' minH='70vh'>
+                {loading? <ItemList listProducts={listProducts} /> : <Spinner color='white' thickness='5px' size='xl'/>}
+            </Box>
+        </ Box>
     )
 }
 
