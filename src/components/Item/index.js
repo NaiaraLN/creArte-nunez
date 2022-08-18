@@ -13,7 +13,7 @@ const Item = ({product}) => {
                 borderWidth='1px' 
                 borderRadius='lg' 
                 m='4' 
-                backdropBlur='10px' 
+                backdropFilter='blur(10px)' 
                 bgColor='primary' 
                 color='black'
                 transition='all 400ms ease'

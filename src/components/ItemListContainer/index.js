@@ -28,8 +28,8 @@ const ItemListContainer = ({greeting}) => {
     }, [category])
 
     return(
-        <Box as='section' minH='90vh' display='flex' alignItems='center' flexDir='column'>
-            <Heading as='h1' size='xl' color='white' lineHeight='md'>{greeting}</Heading>
+        <Box as='section' minH='90vh' display='flex' alignItems='center' flexDir='column'> 
+            <Heading as='h1' size='xl' color='white' lineHeight='md' textAlign='center'>{greeting}</Heading> 
             <Box display='flex' alignItems='center' minH='70vh'>
                 {loading? <ItemList listProducts={listProducts} /> : <Spinner color='white' thickness='5px' size='xl'/>}
             </Box>
