@@ -4,6 +4,10 @@ import { useState, useEffect } from 'react';
 import { products } from '../../utils/products'
 import { ItemList } from '../ItemList';
 import { useParams } from 'react-router-dom'
+// import { db } from '../firebase';
+// import { collection, getDoc, getDocs } from 'firebase/firestore';
+
+
 
 const ItemListContainer = ({greeting}) => {
 
@@ -14,6 +18,9 @@ const ItemListContainer = ({greeting}) => {
 
 
     useEffect(() => {
+        // const productCollection = collection(db, "products")
+        // const consult = getDoc(productCollection)
+
         setLoading(false)
         customFetch(products)
         .then(data => {

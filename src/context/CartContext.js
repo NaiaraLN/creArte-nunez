@@ -9,12 +9,12 @@ const MyProvider = ({children}) => {
     const [cart, setCart] = useState([])
 
     const isInCart = (id) => {
-        return cart.some(prod = prod.id === id)
+        return cart.some(prod => prod.id === id)
     }
     const addItem = (item, quantity) => {
         if(isInCart(item.id)){
             const newCart = cart.map(prod => {
-                if (prod.id === id){
+                if (prod.id === item.id){
                     const newQty = prod.quantity + quantity
                     return {...prod, quantity: newQty}
                 }else{
