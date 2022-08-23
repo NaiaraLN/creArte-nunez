@@ -1,16 +1,20 @@
 import { VStack, Text, Heading, Image, Box, ScaleFade, Stack,Button} from "@chakra-ui/react"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { NavLink } from "react-router-dom"
+import { CartContext } from "../../context/CartContext"
 import { ItemCount } from "../ItemCount"
 
 const ItemDetail = ({listProduct}) => {
 
   const isOpen = true
 
-  const [isAdded, setIsAdded] = useState()
+  const [isAdded, setIsAdded] = useState(false)
+  const {isInCart, addItem} = useContext(CartContext)
+
   const onAdd = (count) =>{
     setIsAdded(true)
-    listProduct.quantity = count
+    isInCart(listProduct.id)
+    addItem(listProduct, count)
   }
 
 
