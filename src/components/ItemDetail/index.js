@@ -32,8 +32,7 @@ const ItemDetail = ({listProduct}) => {
       p={5} 
       display='flex' 
       alignContent='center'
-      alignItems='center'
-      boxShadow='6px 10px 16px 2px rgba(255,255,255,0.65)' 
+      alignItems='center' 
       >
         <Stack direction={['column','column','row','row']} alignItems='center'>
           <Image src={listProduct.img} w={['100%','100%','50%','50%']} borderRadius='lg'/>
