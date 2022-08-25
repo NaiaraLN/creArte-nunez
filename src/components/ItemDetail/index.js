@@ -35,7 +35,7 @@ const ItemDetail = ({listProduct}) => {
       alignItems='center' 
       >
         <Stack direction={['column','column','row','row']} alignItems='center'>
-          <Image src={listProduct.img} w={['100%','100%','50%','50%']} borderRadius='lg'/>
+          <Image src={listProduct.img} alt={listProduct.name} w={['100%','100%','50%','50%']} borderRadius='lg'/>
             <VStack p={4} w={['100%','100%','50%','50%']}>
                 <Heading as='h2' size='md'>{listProduct.name}</Heading>
                 <Text >${listProduct.price}</Text>

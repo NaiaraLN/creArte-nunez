@@ -21,7 +21,7 @@ const Item = ({product}) => {
                     boxShadow:'6px 10px 16px 2px rgba(255,255,255,0.65)',
                     transform: 'translateY(-3%)',
                 }}>
-                    <Image src={product.img} w='100%' borderRadius='lg'/>
+                    <Image src={product.img} alt={product.name} w='100%' borderRadius='lg'/>
                     <VStack p={6}>
                         <Heading as='h2' size='md'>{product.name}</Heading>
                         <Text>${product.price}</Text>
