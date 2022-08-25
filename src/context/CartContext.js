@@ -26,6 +26,7 @@ const MyProvider = ({children}) => {
             const newProduct = {...item, quantity: quantity}
             setCart([...cart, newProduct])
         }
+        
     }
     const emptyCart = () => {
         return setCart([])
@@ -38,7 +39,7 @@ const MyProvider = ({children}) => {
     }
     const totalPrice = () => {
         return cart.reduce((acc, product) => acc += (product.quantity * product.price), 0)
-    }
+    } 
 
 
     return <Provider value={{

@@ -4,10 +4,8 @@ import producto3 from "../assets/leon.png"
 import producto4 from "../assets/mujerOleo.png"
 import producto5 from "../assets/ojoOleo.png"
 
-
-
 export const products = [{
-        id: 1,
+    id: 1,
         name: "Cueva Misteriosa",
         price: 900,
         img: producto1,
@@ -18,7 +16,7 @@ export const products = [{
         technique: "Arte Digital",
         size: "16x20"
     },
-    {
+    {   
         id: 2,
         name: "Galaxia",
         price: 1200,

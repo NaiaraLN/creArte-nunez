@@ -2,8 +2,10 @@ import { Heading, Spinner, Box} from '@chakra-ui/react'
 import { useState, useEffect } from 'react';
 import { ItemList } from '../ItemList';
 import { useParams } from 'react-router-dom'
-import { db } from '../firebase';
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import { customFetch } from "../../utils/customFetch";
+import { products } from '../../utils/products'
+//import { db } from '../firebase';
+//import { collection, getDocs, query, where } from 'firebase/firestore';
 
 
 
@@ -15,8 +17,18 @@ const ItemListContainer = ({greeting}) => {
 
 
     useEffect(() => {
-
-            const productCollection = collection(db, "products")
+        setLoading(false)
+        customFetch(products)
+        .then(data => {
+            if (category) {
+                setLoading(true)
+                setListProducts(data.filter(prod => prod.category === category))
+            }else{
+                setLoading(true)
+                setListProducts(data)
+            }
+            })
+            {/* const productCollection = collection(db, "products")
             let consult;
             if (category) {
                 const filtro = query(productCollection, where("category", "==", category))
@@ -25,6 +37,7 @@ const ItemListContainer = ({greeting}) => {
                 consult = getDocs(productCollection);
             }
             
+            setLoading(false)
             consult
             .then(snapshot=>{
                 const products = snapshot.docs.map(doc => {
@@ -38,7 +51,7 @@ const ItemListContainer = ({greeting}) => {
             })
             .catch(err =>{
                 console.log(err);
-            })
+            }) */}
         
         
     }, [category])

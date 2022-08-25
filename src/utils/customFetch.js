@@ -1,4 +1,3 @@
-
 export const customFetch = (products) => {
     return new Promise((res, rej) => {
         setTimeout(() => {
