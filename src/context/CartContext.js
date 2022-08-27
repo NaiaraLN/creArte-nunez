@@ -7,32 +7,36 @@ const {Provider} = CartContext
 const MyProvider = ({children}) => {
 
     const [cart, setCart] = useState([])
+    //const [totalPrice, setTotalPrice] = useState(0)
 
+    console.log(cart)
     const isInCart = (id) => {
-        return cart.some(prod => prod.id === id)
+        return cart.find(prod => prod.id === parseInt(id))
     }
     const addItem = (item, quantity) => {
-        if(isInCart(item.id)){
-            const newCart = cart.map(prod => {
-                if (prod.id === item.id){
-                    const newQty = prod.quantity + quantity
-                    return {...prod, quantity: newQty}
-                }else{
-                    return prod
-                }
-            })
-            setCart(newCart)
-        }else{
-            const newProduct = {...item, quantity: quantity}
-            setCart([...cart, newProduct])
+        console.log(item)
+        console.log(quantity);
+        const newItem = {
+            ...item,
+            quantity
         }
-        
+        if(isInCart(newItem.id)){
+            const findProduct = cart.find(x => x.id === newItem.id)
+            const productIndex = cart.indexOf(findProduct)
+            const auxArray = [...cart]
+            auxArray[productIndex].quantity += quantity
+            console.log(auxArray)
+            setCart(auxArray)
+        }else{
+            setCart([...cart, newItem])
+        }
     }
     const emptyCart = () => {
         return setCart([])
     }
     const removeItem = (id) => {
-        return setCart(cart.filter(prod => prod.id !== id))
+        console.log(id)
+        return setCart(cart.filter(prod => prod.id !== parseInt(id)))
     }
     const getItemQty = () => {
         return cart.reduce((acc, product) => acc += product.quantity, 0)

@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { ItemDetail } from "../ItemDetail";
 import { Spinner, Box } from '@chakra-ui/react'
 import { useParams } from "react-router-dom";
-import { products } from '../../utils/products';
-import { customFetch } from "../../utils/customFetch";
-//import { getDoc, doc, collection } from "firebase/firestore";
-//import { db } from "../firebase";
+// import { products } from '../../utils/products';
+// import { customFetch } from "../../utils/customFetch";
+import { getDoc, doc, collection } from "firebase/firestore";
+import { db } from "../firebase";
 
 
 const ItemDetailContainer = () => {
@@ -16,25 +16,31 @@ const ItemDetailContainer = () => {
 
 
     useEffect(() => {
-        setLoading(false)
+        /* setLoading(false)
         customFetch(products)
         .then(res => {
           setLoading(true)
           setListProduct(res.find(item => item.id === parseInt(id)))
-        })
-        /* setLoading(false)
+        }) */
+        setLoading(false)
         const productCollection = collection(db, "products")
         const reference = doc(productCollection, id)
         const consult = getDoc(reference)
 
         consult
         .then((res) => {
+          /* const product = snapshot.doc.map(doc => {
+            return{
+                ...doc.data(),
+                id: doc.id
+            }
+        }) */
           setListProduct(res.data())
           setLoading(true)
         })
         .catch((err) => {
           console.log(err);
-        }) */
+        })
     }, [id])
 
   

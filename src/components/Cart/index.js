@@ -11,9 +11,9 @@ const Cart = () => {
     return (
         <Center>
             <VStack>
-                {cart.map(prod => 
+                {cart.map((prod, index) => 
                     <Box 
-                    key={prod.id}
+                    key={index}
                     as="article"
                     w='70%' 
                     h='50%' 
@@ -42,7 +42,7 @@ const Cart = () => {
                 )}
                 {cart.length === 0?
                 <>
-                    <Text color='white'>Tu carrito está vacío</Text>
+                    <Text color='white' fontWeight='500'>Tu carrito está vacío</Text>
                     <Link to={'/'}>
                         <Button variant='secondary'>Ir a la tienda</Button>    
                     </Link>
@@ -50,7 +50,7 @@ const Cart = () => {
                 </>
                 :
                 <>
-                    <Text color="white">Total: ${totalPrice()}</Text>
+                    <Text as='b' color="white">Total: ${totalPrice()}</Text>
                     <Box display='flex'>
                         <Button variant="secondary" onClick={emptyCart} m={3}>Vaciar carrito</Button>
                         <Button variant="secondary" m={3}>Check out</Button>
