@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { ItemDetail } from "../ItemDetail";
 import { Spinner, Box } from '@chakra-ui/react'
 import { useParams } from "react-router-dom";
-// import { products } from '../../utils/products';
-// import { customFetch } from "../../utils/customFetch";
 import { getDoc, doc, collection } from "firebase/firestore";
 import { db } from "../firebase";
 
@@ -16,12 +14,7 @@ const ItemDetailContainer = () => {
 
 
     useEffect(() => {
-        /* setLoading(false)
-        customFetch(products)
-        .then(res => {
-          setLoading(true)
-          setListProduct(res.find(item => item.id === parseInt(id)))
-        }) */
+        
         setLoading(false)
         const productCollection = collection(db, "products")
         const reference = doc(productCollection, id)
@@ -29,13 +22,11 @@ const ItemDetailContainer = () => {
 
         consult
         .then((res) => {
-          /* const product = snapshot.doc.map(doc => {
-            return{
-                ...doc.data(),
-                id: doc.id
-            }
-        }) */
-          setListProduct(res.data())
+          let product = {
+            ...res.data(),
+            id: res.id
+          }
+          setListProduct(product)
           setLoading(true)
         })
         .catch((err) => {

@@ -6,12 +6,12 @@ import { ItemCount } from "../ItemCount"
 
 const ItemDetail = ({listProduct}) => {
 
-  console.log(listProduct.id)
   const isOpen = true
 
   const [isAdded, setIsAdded] = useState(false)
   const {isInCart, addItem} = useContext(CartContext)
 
+  
   const onAdd = (count) =>{
     setIsAdded(true)
     isInCart(listProduct.id)

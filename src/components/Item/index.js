@@ -2,7 +2,7 @@ import { VStack, Text, Heading, Image, Button, Box, ScaleFade} from "@chakra-ui/
 import {Link} from 'react-router-dom'
 
 const Item = ({product}) => {
-
+    console.log(product.img)
     const isOpen = true
     return (
             <ScaleFade initialScale={0.8} in={isOpen}>

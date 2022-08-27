@@ -9,13 +9,10 @@ const MyProvider = ({children}) => {
     const [cart, setCart] = useState([])
     //const [totalPrice, setTotalPrice] = useState(0)
 
-    console.log(cart)
     const isInCart = (id) => {
-        return cart.find(prod => prod.id === parseInt(id))
+        return cart.find(prod => prod.id === id)
     }
     const addItem = (item, quantity) => {
-        console.log(item)
-        console.log(quantity);
         const newItem = {
             ...item,
             quantity
@@ -25,7 +22,6 @@ const MyProvider = ({children}) => {
             const productIndex = cart.indexOf(findProduct)
             const auxArray = [...cart]
             auxArray[productIndex].quantity += quantity
-            console.log(auxArray)
             setCart(auxArray)
         }else{
             setCart([...cart, newItem])
@@ -35,8 +31,7 @@ const MyProvider = ({children}) => {
         return setCart([])
     }
     const removeItem = (id) => {
-        console.log(id)
-        return setCart(cart.filter(prod => prod.id !== parseInt(id)))
+        return setCart(cart.filter(prod => prod.id !==  id))
     }
     const getItemQty = () => {
         return cart.reduce((acc, product) => acc += product.quantity, 0)

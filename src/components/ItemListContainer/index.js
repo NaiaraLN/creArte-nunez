@@ -2,8 +2,6 @@ import { Heading, Spinner, Box} from '@chakra-ui/react'
 import { useState, useEffect } from 'react';
 import { ItemList } from '../ItemList';
 import { useParams } from 'react-router-dom'
-// import { customFetch } from "../../utils/customFetch";
-// import { products } from '../../utils/products'
 import { db } from '../firebase';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 
@@ -17,17 +15,6 @@ const ItemListContainer = ({greeting}) => {
 
 
     useEffect(() => {
-        /* setLoading(false)
-        customFetch(products)
-        .then(data => {
-            if (category) {
-                setLoading(true)
-                setListProducts(data.filter(prod => prod.category === category))
-            }else{
-                setLoading(true)
-                setListProducts(data)
-            }
-            }) */
             const productCollection = collection(db, "products")
             let consult;
             if (category) {
