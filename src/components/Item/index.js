@@ -2,7 +2,6 @@ import { VStack, Text, Heading, Image, Button, Box, ScaleFade} from "@chakra-ui/
 import {Link} from 'react-router-dom'
 
 const Item = ({product}) => {
-    console.log(product.img)
     const isOpen = true
     return (
             <ScaleFade initialScale={0.8} in={isOpen}>
@@ -26,7 +25,7 @@ const Item = ({product}) => {
                         <Heading as='h2' size='md'>{product.name}</Heading>
                         <Text>${product.price}</Text>
                         <Link to={`/product/${product.id}`}>
-                            <Button key={product.id} variant="secondary">Ver detalles</Button>
+                            <Button variant="secondary">Ver detalles</Button>
                         </Link>
                     </VStack>
                 </Box> 

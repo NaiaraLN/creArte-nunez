@@ -23,9 +23,12 @@ const MyProvider = ({children}) => {
             const auxArray = [...cart]
             auxArray[productIndex].quantity += quantity
             setCart(auxArray)
+            
         }else{
             setCart([...cart, newItem])
+            
         }
+        
     }
     const emptyCart = () => {
         return setCart([])
