@@ -5,7 +5,6 @@ import {FaTrashAlt} from "react-icons/fa"
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-
     const {cart, emptyCart, totalPrice, removeItem} = useContext(CartContext)
 
     return (
@@ -53,7 +52,9 @@ const Cart = () => {
                     <Text as='b' color="white">Total: ${totalPrice()}</Text>
                     <Box display='flex'>
                         <Button variant="secondary" onClick={emptyCart} m={3}>Vaciar carrito</Button>
-                        <Button variant="secondary" m={3}>Check out</Button>
+                        <Link to={'/checkout'}>
+                            <Button variant="secondary" m={3}>Check out</Button>
+                        </Link>
                     </Box>
                     
                 </>

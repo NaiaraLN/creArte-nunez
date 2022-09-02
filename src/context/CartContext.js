@@ -7,7 +7,6 @@ const {Provider} = CartContext
 const MyProvider = ({children}) => {
 
     const [cart, setCart] = useState([])
-    //const [totalPrice, setTotalPrice] = useState(0)
 
     const isInCart = (id) => {
         return cart.find(prod => prod.id === id)

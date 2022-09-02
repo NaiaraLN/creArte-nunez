@@ -4,6 +4,7 @@ import { ItemList } from '../ItemList';
 import { useParams } from 'react-router-dom'
 import { db } from '../firebase';
 import { collection, getDocs, query, where } from 'firebase/firestore';
+import { toast } from 'react-toastify';
 
 
 
@@ -37,7 +38,7 @@ const ItemListContainer = ({greeting}) => {
                 setListProducts(products)
             })
             .catch(err =>{
-                console.log(err);
+                toast.error("Error al cargar los productos")
             })
         
         
