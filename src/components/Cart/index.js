@@ -1,11 +1,10 @@
-import { useContext } from "react";
-import { CartContext } from '../../context/CartContext'
+import { useCartContext } from '../../context/CartContext'
 import { VStack, Text, Heading, Image, Box, Stack, Button, Center} from "@chakra-ui/react"
 import {FaTrashAlt} from "react-icons/fa"
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-    const {cart, emptyCart, totalPrice, removeItem} = useContext(CartContext)
+    const {cart, emptyCart, totalPrice, removeItem} = useCartContext()
 
     return (
         <Center>

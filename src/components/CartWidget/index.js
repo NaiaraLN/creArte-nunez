@@ -1,11 +1,10 @@
-import { useContext } from "react";
-import { CartContext } from '../../context/CartContext'
+import { useCartContext} from '../../context/CartContext'
 import { FaShoppingCart } from "react-icons/fa";
 import { Text, Flex } from "@chakra-ui/react";
 
 const CartWidget = () => {
 
-    const {getItemQty} = useContext(CartContext)
+    const {getItemQty} = useCartContext()
 
     return(
         <Flex>

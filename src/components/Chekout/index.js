@@ -9,10 +9,10 @@ import {
     Input,
     FormErrorMessage} from "@chakra-ui/react"
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { CartContext } from "../../context/CartContext";
+import { useCartContext } from "../../context/CartContext";
 import { db } from "../firebase";
 
 const Checkout = () => {
@@ -23,7 +23,7 @@ const Checkout = () => {
         repEmail: '',
         phoneNumber: ''
     })
-    const {cart, totalPrice, emptyCart} = useContext(CartContext)
+    const {cart, totalPrice, emptyCart} = useCartContext()
     const [submit, setSubmit] = useState(false)
     const isError = customer.email !== customer.repEmail
     
@@ -56,20 +56,11 @@ const Checkout = () => {
     
 
 
-    if ((cart.length === 0) && !submit) {
+    if (cart.length === 0) {
         
         return (
             <VStack>
-                <Heading as='h1' color='white' size='lg'>No podés completar el formulario porque todavía no tenés nada en tu carrito </Heading>
-                <Link to={'/'}>
-                    <Button variant="secondary">Volver a la tienda</Button>
-                </Link>
-            </VStack>
-        )
-    }else if(submit) {
-        return(
-            <VStack>
-                <Heading as='h1' color='white' size='lg'>Gracias por elegirnos!</Heading>
+                <Heading as='h1' color='white' size='lg'>{!submit ? "No podés completar el formulario porque todavía no tenés nada en tu carrito " : "Gracias por elegirnos!"}</Heading>
                 <Link to={'/'}>
                     <Button variant="secondary">Volver a la tienda</Button>
                 </Link>

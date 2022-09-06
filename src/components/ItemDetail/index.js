@@ -1,7 +1,7 @@
 import { VStack, Text, Heading, Image, Box, ScaleFade, Stack,Button} from "@chakra-ui/react"
-import { useContext, useState } from "react"
+import { useState } from "react"
 import { NavLink } from "react-router-dom"
-import { CartContext } from "../../context/CartContext"
+import { useCartContext } from "../../context/CartContext"
 import { ItemCount } from "../ItemCount"
 
 const ItemDetail = ({listProduct}) => {
@@ -9,7 +9,7 @@ const ItemDetail = ({listProduct}) => {
   const isOpen = true
 
   const [isAdded, setIsAdded] = useState(false)
-  const {isInCart, addItem} = useContext(CartContext)
+  const {isInCart, addItem} = useCartContext()
 
   
   const onAdd = (count) =>{
@@ -48,7 +48,6 @@ const ItemDetail = ({listProduct}) => {
                   <Button variant='third'>Ir al carrito</Button>
                 </NavLink> :
                 <ItemCount initial={listProduct.initial} stock={listProduct.stock} onAdd={onAdd}/>}
-                
             </VStack>
         </Stack>
             
