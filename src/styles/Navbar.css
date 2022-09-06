@@ -1,0 +1,23 @@
+.navLink{
+    position: relative;
+    text-decoration: none;
+    color: white;
+    padding: 0 10px;
+    font-size: 1.4rem;
+}
+.navLink::after{
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+.navLink:focus{
+    font-weight: bold;
+}
+.navLink:focus::after{
+    width: 100%;
+}
