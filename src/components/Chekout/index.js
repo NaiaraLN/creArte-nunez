@@ -13,7 +13,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useCartContext } from "../../context/CartContext";
-import { db } from "../firebase";
+import { db } from "../../config/firebase";
 
 const Checkout = () => {
     const [customer, setCustomer] = useState({

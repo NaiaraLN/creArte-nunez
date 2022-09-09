@@ -2,7 +2,7 @@ import { Heading, Spinner, Box} from '@chakra-ui/react'
 import { useState, useEffect } from 'react';
 import { ItemList } from '../ItemList';
 import { useParams } from 'react-router-dom'
-import { db } from '../firebase';
+import { db } from '../../config/firebase';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 

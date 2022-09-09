@@ -3,7 +3,7 @@ import { ItemDetail } from "../ItemDetail";
 import { Spinner, Box } from '@chakra-ui/react'
 import { useParams } from "react-router-dom";
 import { getDoc, doc, collection } from "firebase/firestore";
-import { db } from "../firebase";
+import { db } from "../../config/firebase";
 import { toast } from 'react-toastify';
 
 

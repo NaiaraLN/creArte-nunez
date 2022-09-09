@@ -1,40 +1,52 @@
-# Getting Started with Create React App
+# CreArte
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* This ecommerce app is build with React JS using Create React App and it's also using Firebase - Firestore Database. It provides people who love art to buy original paintings and prints. This app allows the user to use a shopping cart to save the paintings they want. Then they have to enter their personal information to save the shopping order.
 
-## Available Scripts
+<video src='https://drive.google.com/file/d/15D78U9ZpUpEZL7hQas3FaxnFrVHvutQt/view?usp=sharing' width='100%' />
 
-In the project directory, you can run:
+## Built with
+* React JS
+* Javascript
+* CSS
 
-### `npm start`
+## Live Demo
+See the demo version in Vercel
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+*[Demo version](https://crearte.vercel.app/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Dev Dependences
 
-### `npm test`
+*react-router-dom: to implement dynamic routing in the web. 
+*react-toastify: used to show errors or the order of the user in a vibrant way.
+*react-icons: to have access to more variety of icons.
+*Chakra UI: it's my first time using it. So i wanted to try it and simplify the styling process.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+To get a local copy up and running follow this steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Copy this link `https://github.com/NaiaraLN/creArte-nunez.git`
+* Create the directory that you want to clone the repository.
+* Open the terminal in this directory.
+* Write `git clone https://github.com/NaiaraLN/creArte-nunez.git`
+* Then run `cd creArte-nunez`  
+* Run `npm install`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Prerequisites
+1.NodeJS
+2.NPM
 
-### `npm run eject`
+### Run the application in local environment 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+*In the terminal write `npm start`
+*To view it in your browser it will open on localhost.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Run test
+Type in your terminal 
+*`npm test`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Build
+Type in your terminal
+*`npm run build`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
