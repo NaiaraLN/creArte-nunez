@@ -2,7 +2,7 @@
 
 * This ecommerce app is build with React JS using Create React App and it's also using Firebase - Firestore Database. It provides people who love art to buy original paintings and prints. This app allows the user to use a shopping cart to save the paintings they want. Then they have to enter their personal information to save the shopping order.
 
-<video src='https://drive.google.com/file/d/15D78U9ZpUpEZL7hQas3FaxnFrVHvutQt/view?usp=sharing' width='100%' />
+<video src='https://drive.google.com/file/d/15D78U9ZpUpEZL7hQas3FaxnFrVHvutQt/view?usp=sharing' width='600' />
 
 ## Built with
 * React JS
