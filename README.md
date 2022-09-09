@@ -22,6 +22,7 @@ See the demo version in Vercel
 * react-toastify: used to show errors or the order of the user in a vibrant way.
 * react-icons: to have access to more variety of icons.
 * Chakra UI: it's my first time using it. So i wanted to try it and simplify the styling process.
+* fontsource: to implement the Heebo font in the app.
 
 ## Getting Started
 
